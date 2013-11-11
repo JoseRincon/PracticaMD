@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131106160303) do
+ActiveRecord::Schema.define(version: 20131110182509) do
 
   create_table "facturas", force: true do |t|
     t.text     "descripcion"
@@ -29,5 +29,12 @@ ActiveRecord::Schema.define(version: 20131106160303) do
   end
 
   add_index "linea_facturas", ["factura_id"], name: "index_linea_facturas_on_factura_id", using: :btree
+
+  create_table "tarifas", force: true do |t|
+    t.string   "nombre"
+    t.string   "descripcion"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end
